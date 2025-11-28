@@ -32,4 +32,7 @@ Thumbs.db
 *.user
 
 # Plastic SCM
+.plastic/
 .plastic/fs_beacon
+.plastic/plastic.changes
+.plastic/plastic.wktree
