@@ -13,7 +13,8 @@ public class PlayerInteractions : MonoBehaviour
 
         if(other.gameObject.CompareTag("HealthBox"))
         {
-            GameManager.Instance.playerHealth += other.gameObject.GetComponent<HealthBox>().health;
+            PlayerHealth playerHealth = GetComponent<PlayerHealth>();
+            playerHealth.currentHealth += other.gameObject.GetComponent<HealthBox>().health;
             Destroy(other.gameObject);
         }
     }
