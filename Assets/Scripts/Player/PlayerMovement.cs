@@ -31,6 +31,22 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
 
+        // Apply impact
+        if (impact.magnitude > 0.2f)
+        {
+            characterController.Move(impact * Time.deltaTime);
+        }
+        impact = Vector3.Lerp(impact, Vector3.zero, 5 * Time.deltaTime);
+
         //animator.SetFloat("velX", x);
+    }
+
+    private Vector3 impact = Vector3.zero;
+
+    public void AddImpact(Vector3 dir, float force)
+    {
+        dir.Normalize();
+        if (dir.y < 0) dir.y = -dir.y; // reflect down force on the ground
+        impact += dir.normalized * force / 3.0f; // mass
     }
 }
