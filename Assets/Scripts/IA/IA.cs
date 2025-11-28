@@ -29,9 +29,21 @@ public class IA : MonoBehaviour
     public float attackCooldown = 1.5f; 
     private float lastAttackTime;
 
+    [Header("--------- Audio ---------------")]
+    public AudioClip attackSound;
+    public AudioSource audioSource;
+
     void Start()
     {
         if (animator == null) animator = GetComponent<Animator>();
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+            if (audioSource == null)
+            {
+                audioSource = gameObject.AddComponent<AudioSource>();
+            }
+        }
         
         navMeshagent.destination = destinations[i].transform.position;
         
@@ -73,14 +85,14 @@ public class IA : MonoBehaviour
     public void EnemyPath()
     {
         // Nos aseguramos de que el agente pueda moverse
-        if (navMeshagent.isStopped) navMeshagent.isStopped = false;
+        if (navMeshagent.isOnNavMesh && navMeshagent.isStopped) navMeshagent.isStopped = false;
 
         if (navMeshagent.isOnNavMesh)
         {
             navMeshagent.destination = destinations[i].position;
         }
 
-        if (!navMeshagent.pathPending && navMeshagent.remainingDistance <= distanceToFollowPath)
+        if (navMeshagent.isOnNavMesh && !navMeshagent.pathPending && navMeshagent.remainingDistance <= distanceToFollowPath)
         {
             if (destinations[i] != destinations[destinations.Length - 1])
             {
@@ -96,7 +108,7 @@ public class IA : MonoBehaviour
     public void FollowPlayer()
     {
         // Reactivamos el movimiento si estaba detenido por atacar
-        if (navMeshagent.isStopped) navMeshagent.isStopped = false;
+        if (navMeshagent.isOnNavMesh && navMeshagent.isStopped) navMeshagent.isStopped = false;
 
         if (navMeshagent.isOnNavMesh)
         {
@@ -107,7 +119,7 @@ public class IA : MonoBehaviour
     public void PerformAttack()
     {
         // 1. Detener al personaje para que no se deslice mientras golpea
-        navMeshagent.isStopped = true;
+        if (navMeshagent.isOnNavMesh) navMeshagent.isStopped = true;
 
         // 2. Mirar al jugador (Importante: El NavMesh no rota si está parado)
         RotateTowardsPlayer();
@@ -117,6 +129,16 @@ public class IA : MonoBehaviour
         {
             // Disparar la animación
             animator.SetTrigger("Attack");
+
+            if (audioSource != null && attackSound != null)
+            {
+                audioSource.PlayOneShot(attackSound);
+                Debug.Log("Enemy attacking. Playing attack sound.");
+            }
+            else
+            {
+                Debug.LogWarning("Enemy attacking but audioSource or attackSound is NULL.");
+            }
             
             // Lógica de daño
             if (player != null)

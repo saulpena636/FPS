@@ -152,3 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13dc539c39c621e449b57dfab05ae3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
+  shootAudio: {fileID: 0}
+  impactSound: {fileID: 8300000, guid: c125e50925b6db6419663bf30c575f5b, type: 3}
+  impactVolume: 6

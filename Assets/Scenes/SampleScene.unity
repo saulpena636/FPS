@@ -1001,6 +1001,8 @@ MonoBehaviour:
   distanceToFollowPath: 2
   distanceToAttack: 2.5
   attackCooldown: 1.5
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &47620270
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1420,6 +1422,8 @@ MonoBehaviour:
   distanceToFollowPath: 2
   distanceToAttack: 2.5
   attackCooldown: 1.5
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &61930878
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4268,6 +4272,8 @@ MonoBehaviour:
   distanceToFollowPath: 2
   distanceToAttack: 2.5
   attackCooldown: 1.5
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &185769267
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8257,6 +8263,8 @@ MonoBehaviour:
   distanceToFollowPath: 2
   distanceToAttack: 2.5
   attackCooldown: 1.5
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &401564003
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8912,6 +8920,8 @@ MonoBehaviour:
   distanceToFollowPath: 2
   distanceToAttack: 2.5
   attackCooldown: 1.5
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &424508251
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -12254,6 +12264,8 @@ MonoBehaviour:
   distanceToFollowPath: 2
   distanceToAttack: 2.5
   attackCooldown: 1.5
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &584842927
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -16562,6 +16574,8 @@ MonoBehaviour:
   distanceToFollowPath: 2
   distanceToAttack: 2.5
   attackCooldown: 1.5
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &719886965
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -19552,6 +19566,8 @@ MonoBehaviour:
   distanceToFollowPath: 2
   distanceToAttack: 2.5
   attackCooldown: 1.5
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &815754876
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -22836,6 +22852,8 @@ MonoBehaviour:
   distanceToFollowPath: 2
   distanceToAttack: 2.5
   attackCooldown: 1.5
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &975024217
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -23945,6 +23963,8 @@ MonoBehaviour:
   distanceToFollowPath: 2
   distanceToAttack: 2.5
   attackCooldown: 1.5
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &1053075618
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -33402,6 +33422,8 @@ MonoBehaviour:
   distanceToFollowPath: 2
   distanceToAttack: 2.5
   attackCooldown: 1.5
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &1569837061
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -35094,6 +35116,8 @@ MonoBehaviour:
   distanceToFollowPath: 2
   distanceToAttack: 2.5
   attackCooldown: 1.5
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &1672091726
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -36372,6 +36396,8 @@ MonoBehaviour:
   distanceToFollowPath: 2
   distanceToAttack: 2.5
   attackCooldown: 1.5
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &1722186550
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -37366,6 +37392,8 @@ MonoBehaviour:
   distanceToFollowPath: 2
   distanceToAttack: 2.5
   attackCooldown: 1.5
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &1762400325
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -37646,6 +37674,8 @@ MonoBehaviour:
   distanceToFollowPath: 2
   distanceToAttack: 2.5
   attackCooldown: 1.5
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &1772125918
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -38984,6 +39014,8 @@ MonoBehaviour:
   distanceToFollowPath: 2
   distanceToAttack: 2.5
   attackCooldown: 1.5
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &1810768176
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -41769,6 +41801,8 @@ MonoBehaviour:
   distanceToFollowPath: 2
   distanceToAttack: 2.5
   attackCooldown: 1.5
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &1958661710
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -46776,6 +46810,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 100
   currentHealth: 100
+  damageSound: {fileID: 8300000, guid: 2f406e620d5129f44bf3cc180283e819, type: 3}
+  audioSource: {fileID: 0}
 --- !u!1001 &4696692603231765670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46789,6 +46825,11 @@ PrefabInstance:
       propertyPath: shootAudio
       value: 
       objectReference: {fileID: 497849753}
+    - target: {fileID: 2636384296372214964, guid: c99c88df36f2f624383e244f35a5346b,
+        type: 3}
+      propertyPath: impactSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c125e50925b6db6419663bf30c575f5b, type: 3}
     - target: {fileID: 3360839870835743688, guid: c99c88df36f2f624383e244f35a5346b,
         type: 3}
       propertyPath: m_LocalPosition.x

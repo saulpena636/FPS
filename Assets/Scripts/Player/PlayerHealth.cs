@@ -7,9 +7,21 @@ public class PlayerHealth : MonoBehaviour
 
     public event System.Action<int> OnHealthChanged;
 
+    [Header("Audio")]
+    public AudioClip damageSound;
+    public AudioSource audioSource;
+
     void Start()
     {
         currentHealth = maxHealth;
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+            if (audioSource == null)
+            {
+                audioSource = gameObject.AddComponent<AudioSource>();
+            }
+        }
         OnHealthChanged?.Invoke(currentHealth);
     }
 
@@ -19,6 +31,16 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth < 0) currentHealth = 0;
         
         OnHealthChanged?.Invoke(currentHealth);
+
+        if (audioSource != null && damageSound != null)
+        {
+            audioSource.PlayOneShot(damageSound);
+            Debug.Log("Player took damage. Playing damage sound.");
+        }
+        else
+        {
+            Debug.LogWarning("Player took damage but audioSource or damageSound is NULL.");
+        }
 
         Debug.Log("Player took damage: " + amount + ". Current Health: " + currentHealth);
 
