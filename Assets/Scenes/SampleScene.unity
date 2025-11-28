@@ -47783,6 +47783,8 @@ MonoBehaviour:
   currentHealth: 100
   gameOverPanel: {fileID: 585030708}
   menuButton: {fileID: 1934758606}
+  damageSound: {fileID: 8300000, guid: 2f406e620d5129f44bf3cc180283e819, type: 3}
+  audioSource: {fileID: 0}
 --- !u!1001 &4696692603231765670
 PrefabInstance:
   m_ObjectHideFlags: 0
