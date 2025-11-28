@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - GunAmmo
+  - HealthBox
   layers:
   - Default
   - TransparentFX
