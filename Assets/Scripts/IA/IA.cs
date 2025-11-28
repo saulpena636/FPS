@@ -133,4 +133,24 @@ public class IA : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(10);
+                
+                PlayerMovement playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
+                if (playerMovement != null)
+                {
+                    Vector3 dir = collision.transform.position - transform.position;
+                    // Flatten the direction so they don't fly upwards too much unless intended
+                    dir.y = 0; 
+                    playerMovement.AddImpact(dir, 50f); // Adjust force as needed
+                }
+            }
+        }
+    }
 }
