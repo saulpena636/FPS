@@ -5,15 +5,21 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
+    public event System.Action<int> OnHealthChanged;
+
     void Start()
     {
         currentHealth = maxHealth;
+        OnHealthChanged?.Invoke(currentHealth);
     }
 
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
         if (currentHealth < 0) currentHealth = 0;
+        
+        OnHealthChanged?.Invoke(currentHealth);
+
         Debug.Log("Player took damage: " + amount + ". Current Health: " + currentHealth);
 
         if (currentHealth <= 0)

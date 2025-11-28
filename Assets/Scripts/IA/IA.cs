@@ -118,7 +118,15 @@ public class IA : MonoBehaviour
             // Disparar la animación
             animator.SetTrigger("Attack");
             
-            // Aquí podrías poner lógica de daño (ej: player.TakeDamage(10))
+            // Lógica de daño
+            if (player != null)
+            {
+                PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+                if (playerHealth != null)
+                {
+                    playerHealth.TakeDamage(10);
+                }
+            }
             Debug.Log("¡Golpe lanzado!");
 
             // Resetear el temporizador
