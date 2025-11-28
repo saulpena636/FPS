@@ -2347,6 +2347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 342930842}
+  - component: {fileID: 342930843}
   m_Layer: 0
   m_Name: EnemyParent
   m_TagString: Untagged
@@ -2376,6 +2377,19 @@ Transform:
   - {fileID: 1798680277}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &342930843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342930841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 960974f9eddcd69439310e31db5bb74a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyWatcher
+  nextSceneName: Level2
 --- !u!1 &347660128
 GameObject:
   m_ObjectHideFlags: 0
